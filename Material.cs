@@ -1,4 +1,6 @@
-п»їusing System;
+//coment1
+//comment
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +11,9 @@ namespace New.Domain.Entities
    public class Material
     {
         public int index { get;  set; }
-        public string name { get; set; }          //РІРёРґ
-        public string Description { get; set; }  // С‚РёРїРѕСЂР°Р·РјРµСЂ
-        public string type { get; set; }     // РєР°С‚РµРіРѕСЂРёСЏ
+        public string name { get; set; }          //вид
+        public string Description { get; set; }  // типоразмер
+        public string type { get; set; }     // категория
         public int Dlina { get; set; }
         public float Sechenie { get; set; }
         public int Ves { get; set; }
