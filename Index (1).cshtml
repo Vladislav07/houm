@@ -1,0 +1,70 @@
+﻿@model New.Domain.Entities.data_order
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="container" style="border:2px solid #000;">
+    <div role="row">
+        <h4>data_order</h4>
+    	<hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.note)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.note)
+            </dd>
+    
+        </dl>
+    </div>
+      <div class="row">
+          @foreach (var mat in Model.materials)
+          {
+              <p>@mat.type + @mat.name + @mat.Description</p>
+                 
+              foreach (var nesting in mat.list_nesting_plans)
+              {
+                 // форма с габаритами: граница 
+                 // длина 
+              <input id="Button1" type="button" value="button" style="width:@nesting.width px" />
+                 
+                  // ширина    
+                 // @nesting.width
+                 
+               //внутри формы еще формы
+                  foreach (var part in nesting.list_parts_nesting)
+                  {
+                      //позиция x и y,  габариты ...
+                  }
+                   
+                  
+              }
+             // список деталей
+          }
+
+      </div> 
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+</body>
+</html>
